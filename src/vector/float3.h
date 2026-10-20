@@ -84,4 +84,10 @@ static __device__ __forceinline__ inline float3 operator*(float scalar, float3 v
     float3 r = {v.x * scalar, v.y * scalar, v.z * scalar};
     return r;
 }
+static __device__ __forceinline float3 operator*(float3 a, float3 b) {
+    return make_float3(a.x * b.x, a.y * b.y, a.z * b.z);
+}
+static __device__ __forceinline float3 operator/(float3 a, float3 b) {
+    return make_float3(a.x / b.x, a.y / b.y, a.z / b.z);
+}
 #endif
